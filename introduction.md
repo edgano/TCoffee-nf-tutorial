@@ -50,7 +50,7 @@ Before start, we need to check the configuration file. This si the place where w
 
 Let's take a look to the first script ```tc-ex1.nf```
 Here we can see the ***channels*** that they are the input/output of our program.
-In this first example, we recollect the fasta files '''*.fa''' from the folder ```/seqs/*.fa```
+In this first example, we recollect the fasta files ```*.fa``` from the folder ```/seqs/*.fa```
 And the output we will place on the directory ```/results```
 
 The command line we will run in this case is the easy example we did before:
@@ -67,9 +67,20 @@ Now, time to check the ```results``` folder and we will see the same 3 files for
 Move on, and let's go to the second script.
 In this case we will try to run different modes and other functionalities, let's take a look.
 Open the file ```vim tc-ext2.nf``` and take a look.
-In this case we will run t-coffee but with the use of the modes. In the proccess coffee_flavour we can find all the different methods to align sequences.
+In this case we will run t-coffee but with the use of the modes. In the proccess ```coffee_flavour``` we can find all the different methods to align sequences.
+```
+t_coffee -seq ${seqs} -mode=expresso -run_name=${id}_expresso
+```
+***Nextflow power***
+We can run multiple mode in the same pipeline or decide the mode on the air using the command line.
+In the process ```multiple_flavour``` we can see that it will run the list of flavour of the variable ```tcMode```
+Then we can override the value of the variaable if we introduce the mode in the line as following:
+```
+nextflow run tc-ex2.nf
 
+## to introduce the mode using the comand line
+nextflow run tc-ex2.nf -tcMode expresso
+```
 
-
-
+T-Coffe is not and alignment tool or a framework to perform just multiple sequence alignment. It allow us to perform other operations as calculate the simility between sequences, convert from one format to another , etc.
 
