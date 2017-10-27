@@ -1,6 +1,6 @@
-Welcome to this tutorial.
-
 Here we want to introduce you the main concept of Sequence Alignment and Multiple Sequence Alignment. The tool T-Coffee and a bit of Nextflow.
+
+Welcome to this tutorial.
 ----------
 Tutorial
 ----------
